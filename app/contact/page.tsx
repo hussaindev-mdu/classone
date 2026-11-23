@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Contact } from "@/components/sections/Contact";
+// import { Contact } from "@/components/sections/Contact";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="pt-12 md:pt-16">
-      <Contact index="" headingLevel="h1" />
+      {/* <Contact index="" headingLevel="h1" /> */}
     </div>
   );
 }
