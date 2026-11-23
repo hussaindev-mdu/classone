@@ -7,7 +7,7 @@ import { Founder } from "@/components/sections/Founder";
 import { WhyClassOne } from "@/components/sections/WhyClassOne";
 import { Numbers } from "@/components/sections/Numbers";
 import { Industries } from "@/components/sections/Industries";
-import { Testimonials } from "@/components/sections/Testimonials";
+// import { Testimonials } from "@/components/sections/Testimonials";
 import { CtaBand } from "@/components/sections/CtaBand";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function AboutPage() {
     <>
       <PageHeader
         label="About ClassOne"
-        title="People-centred HR consulting."
+        title="Practical HR partnership."
         intro={intro.experience}
         crumbs={[{ label: "About" }]}
       />
@@ -32,7 +32,7 @@ export default function AboutPage() {
       <WhyClassOne index="03" />
       <Numbers />
       <Industries index="04" />
-      <Testimonials sectionIndex="05" />
+      {/* <Testimonials sectionIndex="05" /> */}
       <CtaBand />
     </>
   );
