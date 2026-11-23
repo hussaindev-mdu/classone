@@ -7,31 +7,31 @@ import { CtaBand } from "@/components/sections/CtaBand";
 export const metadata: Metadata = {
   title: "Process",
   description:
-    "Discovery, assessment, strategy, implementation and review: how ClassOne Consulting works with your business.",
+    "Understand, design, implement: how ClassOne Consulting works with your business.",
   alternates: { canonical: "/process" },
 };
 
-/** PLACEHOLDER answers: confirm details (especially timelines and pricing) with ClassOne. */
+/** Answers based on the company profile. PLACEHOLDER: confirm pricing with ClassOne. */
 const faqs = [
   {
-    q: "How long does a typical engagement take?",
-    a: "Discovery and assessment usually take one to two weeks. Implementation depends on scope: a single hire can close in a few weeks, while a payroll or compliance overhaul typically runs over one to three months.",
+    q: "How can we work with ClassOne?",
+    a: "There are three ways to engage: an HR diagnostic and roadmap (a focused review of current practices with prioritized recommendations), a defined HR project (a scoped delivery such as a policy refresh, performance cycle setup or recruitment process improvement), or ongoing HR advisory (recurring support for leaders and managers, with agreed availability and priorities).",
   },
   {
-    q: "Can we engage you only for HR, or only for finance?",
-    a: "Yes. Many clients start with one service and add others later. Because both disciplines sit under one team, anything you add later builds on what we already know about your business.",
+    q: "Can you work with a business of our size?",
+    a: "Yes. The scope of every engagement is agreed to fit each organization’s size, sector, priorities and applicable local requirements.",
   },
   {
-    q: "Do you work with startups and small businesses?",
-    a: "Yes. We work with businesses from early-stage startups to established companies with several hundred employees, and scale the engagement to fit.",
+    q: "Which areas of HR do you cover?",
+    a: "Support across the HR lifecycle: talent acquisition and workforce planning, HR policies and compliance support, performance and employee relations, learning and organizational development, compensation, benefits and payroll coordination, and HR operations, systems and analytics.",
   },
   {
     q: "How is pricing structured?",
-    a: "[PLACEHOLDER] Pricing depends on scope: project-based fees for one-off work, and monthly retainers for ongoing services like payroll and compliance. We share a clear proposal after the discovery call.",
+    a: "[PLACEHOLDER] Pricing depends on the engagement option and scope. We share a clear proposal once we understand the business and the immediate challenge.",
   },
   {
     q: "Who will we work with?",
-    a: "You get one dedicated consultant who stays with you from discovery to review, and brings in specialists from our HR and finance teams as needed.",
+    a: "Kumaran Ilangovan, Founder & CEO and Principal Consultant, a senior HR professional with more than 14 years of experience across India and the UAE.",
   },
 ];
 
@@ -41,7 +41,7 @@ export default function ProcessPage() {
       <PageHeader
         label="Process"
         title="How we work."
-        intro="A clear five-step method, so you always know what happens next and why."
+        intro="Three clear steps, so you always know what happens next and why."
         crumbs={[{ label: "Process" }]}
       />
       <Process header={false} />

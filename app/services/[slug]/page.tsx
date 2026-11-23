@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!service) return {};
   return {
     title: service.name,
-    description: `${service.description} ${service.discipline} by ClassOne Consulting, Chennai.`,
+    description: `${service.description} HR consulting by ClassOne Consulting, Chennai.`,
     alternates: { canonical: `/services/${service.slug}` },
   };
 }
@@ -32,12 +32,12 @@ export default async function ServicePage({ params }: Props) {
   const service = getService((await params).slug);
   if (!service) notFound();
 
-  const related = allServices.filter((s) => s.discipline === service.discipline && s.slug !== service.slug);
+  const related = allServices.filter((s) => s.slug !== service.slug).slice(0, 3);
 
   return (
     <>
       <PageHeader
-        label={`${serviceNumber(service)} — ${service.discipline}`}
+        label={`${serviceNumber(service)} — HR Consulting`}
         title={service.name}
         intro={service.description}
         crumbs={[{ label: "Services", href: "/services" }, { label: service.name }]}
@@ -94,7 +94,7 @@ export default async function ServicePage({ params }: Props) {
         <div className="container-site">
           <div className="mb-10 flex items-end justify-between gap-6">
             <h2 id="related-title" className="display text-[clamp(1.75rem,3.5vw,2.75rem)]">
-              More {service.discipline.toLowerCase()}
+              More HR services
             </h2>
             <Link
               href="/services"

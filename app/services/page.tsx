@@ -7,7 +7,7 @@ import { CtaBand } from "@/components/sections/CtaBand";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Recruitment, assessment, learning & development, engagement, payroll, financial planning, compliance and performance strategy: eight services from one partner.",
+    "Talent acquisition, HR policies and compliance, performance and employee relations, learning and development, compensation and payroll, and HR operations: HR consulting across the lifecycle.",
   alternates: { canonical: "/services" },
 };
 
@@ -16,8 +16,8 @@ export default function ServicesPage() {
     <>
       <PageHeader
         label="Services"
-        title="Everything your business needs to grow."
-        intro="We combine people strategy with financial clarity, so hiring, pay and planning move in the same direction."
+        title="HR consulting services."
+        intro="Practical HR partnership for stronger, more capable workplaces."
         crumbs={[{ label: "Services" }]}
       />
       <Services index="01" id="all-services" />

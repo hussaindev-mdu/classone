@@ -1,7 +1,7 @@
 /**
  * Single source of truth for ClassOne contact details and links.
  *
- * TODO before launch: replace every value marked PLACEHOLDER.
+ * Details from the ClassOne company profile. Values marked PLACEHOLDER still need confirming.
  * These values feed the nav, footer, contact section, WhatsApp button,
  * page metadata and the ProfessionalService JSON-LD.
  */
@@ -10,43 +10,42 @@ const CITY = "Chennai";
 
 export const siteConfig = {
   name: "ClassOne Consulting",
+  legalName: "ClassOne Consulting (OPC) Private Limited",
   shortName: "ClassOne",
   tagline: "People. Performance. Progress.",
-  descriptor: "HR Consulting | Financial Advisory",
+  descriptor: "People-Centred HR Consulting",
   description:
-    "ClassOne Consulting is an HR consulting and financial advisory firm helping growing businesses hire better, stay compliant and plan with financial clarity.",
+    "ClassOne Consulting is a founder-led HR consulting firm in Chennai helping organizations build clear, consistent and people-centred HR practices, shaped by more than 14 years of experience across India and the UAE.",
 
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.classoneconsulting.in", // PLACEHOLDER domain
 
   city: CITY,
 
-  // PLACEHOLDER: full street address.
+  // Add street and postalCode when available; empty values are skipped on the site.
   address: {
-    street: "[Street address]",
+    street: "",
     locality: CITY,
     region: "Tamil Nadu",
-    postalCode: "[PIN]",
+    postalCode: "",
     country: "IN",
   },
 
-  // PLACEHOLDER: display phone and the tel: version (E.164).
   phone: {
-    display: "+91 XXXXX XXXXX",
-    tel: "+91XXXXXXXXXX",
+    display: "+91 90254 12330",
+    tel: "+919025412330",
   },
 
-  // PLACEHOLDER: public email address shown on the site.
-  email: "hello@classoneconsulting.in",
+  email: "classoneconsult.hr@gmail.com",
 
   whatsapp: {
     // Digits only, with country code.
     number: "919025412330",
     message:
-      "Hi ClassOne, I'd like to discuss HR / financial advisory services for my business.",
+      "Hi ClassOne, I'd like to discuss HR consulting support for my business.",
   },
 
   social: {
-    linkedin: "https://www.linkedin.com/company/classone-consulting", // PLACEHOLDER
+    linkedin: "https://www.linkedin.com/company/classone-consulting-opc-private-limited",
     instagram: "https://www.instagram.com/classoneconsulting", // PLACEHOLDER
   },
 
@@ -57,6 +56,16 @@ export const siteConfig = {
 export const whatsappHref = `https://wa.me/${siteConfig.whatsapp.number}?text=${encodeURIComponent(
   siteConfig.whatsapp.message,
 )}`;
+
+/** "Chennai, Tamil Nadu, India" plus street / PIN when they are filled in. */
+export const addressLine = [
+  siteConfig.address.street,
+  siteConfig.address.locality,
+  [siteConfig.address.region, siteConfig.address.postalCode].filter(Boolean).join(" "),
+  "India",
+]
+  .filter(Boolean)
+  .join(", ");
 
 export const navLinks = [
   { label: "Services", href: "/services" },

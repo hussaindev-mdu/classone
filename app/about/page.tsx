@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { intro } from "@/lib/content";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { About } from "@/components/sections/About";
+import { VisionMission } from "@/components/sections/VisionMission";
+import { Founder } from "@/components/sections/Founder";
 import { WhyClassOne } from "@/components/sections/WhyClassOne";
 import { Numbers } from "@/components/sections/Numbers";
 import { Industries } from "@/components/sections/Industries";
@@ -10,7 +13,7 @@ import { CtaBand } from "@/components/sections/CtaBand";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "ClassOne Consulting brings HR consulting and financial advisory together under one accountable partner for growing businesses in Chennai.",
+    "ClassOne Consulting is a founder-led HR consulting practice in Chennai, shaped by more than 14 years of HR experience across India and the UAE.",
   alternates: { canonical: "/about" },
 };
 
@@ -19,15 +22,17 @@ export default function AboutPage() {
     <>
       <PageHeader
         label="About ClassOne"
-        title="Built on strong foundations."
-        intro="Strategy, structure and compliance sit behind every engagement, so the decisions you build on them hold."
+        title="People-centred HR consulting."
+        intro={intro.experience}
         crumbs={[{ label: "About" }]}
       />
       <About index="01" />
-      <WhyClassOne index="02" />
+      <VisionMission />
+      <Founder index="02" />
+      <WhyClassOne index="03" />
       <Numbers />
-      <Industries index="03" />
-      <Testimonials sectionIndex="04" />
+      <Industries index="04" />
+      <Testimonials sectionIndex="05" />
       <CtaBand />
     </>
   );

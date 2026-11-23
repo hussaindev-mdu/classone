@@ -1,6 +1,11 @@
 import { z } from "zod";
 
-export const SERVICE_OPTIONS = ["HR Consulting", "Financial Advisory", "Both", "Not sure yet"] as const;
+export const SERVICE_OPTIONS = [
+  "HR diagnostic and roadmap",
+  "Defined HR project",
+  "Ongoing HR advisory",
+  "Not sure yet",
+] as const;
 export const SIZE_OPTIONS = ["1–10", "11–50", "51–200", "200+"] as const;
 export const CONTACT_METHODS = ["Call", "WhatsApp", "Email"] as const;
 

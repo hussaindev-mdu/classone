@@ -1,5 +1,5 @@
 import { siteConfig } from "@/lib/site-config";
-import { allServices } from "@/lib/content";
+import { allServices, founder } from "@/lib/content";
 
 /** ProfessionalService structured data built from site-config.ts. */
 export function JsonLd() {
@@ -8,6 +8,7 @@ export function JsonLd() {
     "@type": "ProfessionalService",
     "@id": `${siteConfig.url}/#organization`,
     name: siteConfig.name,
+    legalName: siteConfig.legalName,
     slogan: siteConfig.tagline,
     description: siteConfig.description,
     url: siteConfig.url,
@@ -17,14 +18,15 @@ export function JsonLd() {
     email: siteConfig.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: siteConfig.address.street,
+      ...(siteConfig.address.street ? { streetAddress: siteConfig.address.street } : {}),
       addressLocality: siteConfig.address.locality,
       addressRegion: siteConfig.address.region,
-      postalCode: siteConfig.address.postalCode,
+      ...(siteConfig.address.postalCode ? { postalCode: siteConfig.address.postalCode } : {}),
       addressCountry: siteConfig.address.country,
     },
     areaServed: { "@type": "Country", name: "India" },
     openingHours: siteConfig.hours,
+    founder: { "@type": "Person", name: founder.name, jobTitle: founder.role },
     sameAs: [siteConfig.social.linkedin, siteConfig.social.instagram],
     hasOfferCatalog: {
       "@type": "OfferCatalog",

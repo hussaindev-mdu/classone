@@ -250,7 +250,7 @@ export function ContactForm() {
               />
             </Field>
 
-            <Field id={id("service")} label="Service needed" error={errors.service?.message}>
+            <Field id={id("service")} label="Engagement type" error={errors.service?.message}>
               <div className="relative">
                 <select
                   id={id("service")}
@@ -259,7 +259,7 @@ export function ContactForm() {
                   className={`${inputClass(!!errors.service)} appearance-none pr-6 [&>option]:bg-charcoal`}
                   {...register("service")}
                 >
-                  <option value="">Select a service</option>
+                  <option value="">Select an option</option>
                   {SERVICE_OPTIONS.map((o) => (
                     <option key={o} value={o}>
                       {o}

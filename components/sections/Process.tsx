@@ -7,7 +7,7 @@ export function Process({ index = "04", header = true }: { index?: string; heade
   // Without the section heading (on /process) steps sit directly under the page h1.
   const StepHeading = header ? "h3" : "h2";
   return (
-    <section id="process" aria-labelledby={header ? "process-title" : undefined} aria-label={header ? undefined : "Our five-step process"} className="py-28 md:py-40">
+    <section id="process" aria-labelledby={header ? "process-title" : undefined} aria-label={header ? undefined : "How we work"} className="py-28 md:py-40">
       <div className="container-site">
         {header && (
         <SectionHeader
@@ -15,11 +15,11 @@ export function Process({ index = "04", header = true }: { index?: string; heade
           index={index}
           label="Process"
           title="How we work."
-          intro="A clear five-step method, so you always know what happens next and why."
+          intro="Three clear steps, so you always know what happens next and why."
         />
         )}
 
-        <ol className="relative grid gap-10 md:grid-cols-5 md:gap-6">
+        <ol className="relative grid gap-10 md:grid-cols-3 md:gap-6">
           {/* Connecting rule: vertical on mobile, horizontal on desktop */}
           <span aria-hidden className="absolute bottom-2 left-[13px] top-2 w-px bg-line md:bottom-auto md:left-0 md:right-0 md:top-[14px] md:h-px md:w-auto" />
           {processSteps.map((step, i) => (

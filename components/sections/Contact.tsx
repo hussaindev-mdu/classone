@@ -1,9 +1,8 @@
-import { siteConfig, whatsappHref } from "@/lib/site-config";
+import { siteConfig, whatsappHref, addressLine } from "@/lib/site-config";
 import { Reveal } from "@/components/ui/Reveal";
 import { ContactForm } from "./ContactForm";
 
 export function Contact({ index = "07", headingLevel = "h2" }: { index?: string; headingLevel?: "h1" | "h2" }) {
-  const { address } = siteConfig;
   const Heading = headingLevel;
   return (
     <section id="contact" aria-labelledby="contact-title" className="py-28 md:py-40">
@@ -18,7 +17,7 @@ export function Contact({ index = "07", headingLevel = "h2" }: { index?: string;
             Book a consultation.
           </Heading>
           <p className="mt-6 max-w-md text-base leading-relaxed md:text-lg">
-            Tell us where your business is today. A ClassOne consultant will get back to you within one working day.
+            For HR consulting enquiries and partnership conversations, tell us where your business is today.
           </p>
 
           <dl className="mt-12 grid gap-6 border-t border-line pt-8 text-[15px]">
@@ -49,7 +48,7 @@ export function Contact({ index = "07", headingLevel = "h2" }: { index?: string;
             <div>
               <dt className="label mb-1.5">Office</dt>
               <dd>
-                {address.street}, {address.locality}, {address.region} {address.postalCode}
+                {addressLine}
               </dd>
             </div>
           </dl>

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Book a consultation with ClassOne Consulting, Chennai. HR consulting and financial advisory for growing businesses.",
+  description: "Book a consultation with ClassOne Consulting, Chennai. People-centred HR consulting for growing businesses.",
   alternates: { canonical: "/contact" },
 };
 

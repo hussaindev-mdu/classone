@@ -74,7 +74,7 @@ export function HeroOverlays({ progress }: { progress: MotionValue<number> }) {
           </div>
           <div className="flex flex-col gap-5 md:shrink-0 md:items-end">
             <p className="label whitespace-nowrap !tracking-[0.2em] !text-fg-body md:!tracking-label">
-              HR Consulting <span className="mx-2 text-red-bright">|</span> Financial Advisory
+              People-Centred <span className="mx-2 text-red-bright">|</span> HR Consulting
             </p>
             <ButtonLink href="/contact" className="self-start md:self-auto">
               Book a consultation
@@ -88,17 +88,17 @@ export function HeroOverlays({ progress }: { progress: MotionValue<number> }) {
         style={foundations}
         index="01"
         label="Foundations"
-        title="Built on strong foundations."
-        text="Strategy, structure and compliance sit behind every engagement, so the decisions you build on them hold."
+        title="Practical HR partnership."
+        text="A founder-led HR consulting practice shaped by more than 14 years of experience across India and the UAE."
       />
 
       {/* 55–85%: services emerging */}
       <Chapter
         style={growth}
         index="02"
-        label="Eight platforms"
-        title="Everything your business needs to grow."
-        text="We combine people strategy with financial clarity, so hiring, pay and planning move in the same direction."
+        label="HR lifecycle"
+        title="Stronger, more capable workplaces."
+        text="Support that connects recruitment, performance, development, employee relations and HR operations."
       />
 
       {/* 85–100%: fully exploded. The final frame already shows the service labels. */}

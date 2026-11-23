@@ -3,8 +3,8 @@ import { Reveal } from "@/components/ui/Reveal";
 
 /** Closing call-to-action used at the end of inner pages. */
 export function CtaBand({
-  title = "Let's build what's next.",
-  text = "Tell us where your business is today. A ClassOne consultant will get back to you within one working day.",
+  title = "Let’s build better people practices.",
+  text = "For HR consulting enquiries and partnership conversations, talk to ClassOne.",
 }: {
   title?: string;
   text?: string;

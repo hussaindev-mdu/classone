@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { hrServices, financeServices, type Service } from "@/lib/content";
+import { services, servicesIntro, engagementOptions, type Service } from "@/lib/content";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -33,19 +33,6 @@ function ServiceRow({ n, service }: { n: number; service: Service }) {
   );
 }
 
-function Column({ title, items, offset }: { title: string; items: Service[]; offset: number }) {
-  return (
-    <div>
-      <h3 className="label mb-2 border-b border-line pb-5 !text-fg">{title}</h3>
-      <ul>
-        {items.map((s, i) => (
-          <ServiceRow key={s.slug} n={offset + i + 1} service={s} />
-        ))}
-      </ul>
-    </div>
-  );
-}
-
 export function Services({ index = "02", id = "services" }: { index?: string; id?: string }) {
   return (
     <section id={id} aria-labelledby={`${id}-title`} className="bg-charcoal py-28 md:py-40">
@@ -56,17 +43,35 @@ export function Services({ index = "02", id = "services" }: { index?: string; id
           label="Services"
           title={
             <>
-              Two disciplines.
+              Support across
               <br />
-              One accountable partner.
+              the HR lifecycle.
             </>
           }
-          intro="Eight services across HR consulting and financial advisory, delivered by one team that sees how they connect."
+          intro={servicesIntro}
         />
-        <Reveal className="grid gap-16 md:grid-cols-[1fr_1px_1fr] md:gap-14 lg:gap-20">
-          <Column title="HR Consulting" items={hrServices} offset={0} />
-          <div aria-hidden className="hidden w-px bg-red/70 md:block" />
-          <Column title="Financial Advisory" items={financeServices} offset={4} />
+        <Reveal>
+          <h3 className="label mb-2 border-b border-line pb-5 !text-fg">HR Consulting</h3>
+          <ul className="grid md:grid-cols-2 md:gap-x-14 lg:gap-x-20">
+            {services.map((s, i) => (
+              <ServiceRow key={s.slug} n={i + 1} service={s} />
+            ))}
+          </ul>
+        </Reveal>
+
+        <Reveal className="mt-20 md:mt-28">
+          <h3 className="label mb-8 flex items-center gap-4 !text-fg">
+            <span aria-hidden className="h-px w-10 bg-red" />
+            Engagement options
+          </h3>
+          <ul className="grid gap-px bg-line md:grid-cols-3">
+            {engagementOptions.map((o) => (
+              <li key={o.title} className="flex flex-col gap-4 bg-charcoal p-8 md:p-10">
+                <span className="font-display text-2xl font-medium uppercase leading-tight text-fg">{o.title}</span>
+                <span className="text-[15px] leading-relaxed">{o.text}</span>
+              </li>
+            ))}
+          </ul>
         </Reveal>
       </div>
     </section>

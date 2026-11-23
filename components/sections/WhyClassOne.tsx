@@ -9,7 +9,7 @@ export function WhyClassOne({ index = "03" }: { index?: string }) {
   return (
     <section aria-labelledby="why-title" className="py-28 md:py-40">
       <div className="container-site">
-        <SectionHeader id="why-title" index={index} label="Why ClassOne" title="Why businesses choose us." />
+        <SectionHeader id="why-title" index={index} label="Why ClassOne" title="Why work with ClassOne." />
         <ul className="grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-4">
           {whyPoints.map((p, i) => {
             const Icon = icons[p.icon];

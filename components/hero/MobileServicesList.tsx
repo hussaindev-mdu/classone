@@ -1,16 +1,13 @@
-import { hrServices, financeServices } from "@/lib/content";
+import { services } from "@/lib/content";
 
 /**
  * Mobile only: the service labels baked into the final frame are too small to
- * read on phones, so list the eight services directly below the hero.
+ * read on phones, so list the services directly below the hero.
  */
 export function MobileServicesList() {
-  const groups = [
-    { title: "HR Consulting", items: hrServices, offset: 0 },
-    { title: "Financial Advisory", items: financeServices, offset: 4 },
-  ];
+  const groups = [{ title: "HR Consulting", items: services, offset: 0 }];
   return (
-    <section aria-label="Our eight services" className="border-y border-line bg-charcoal md:hidden">
+    <section aria-label="Our HR services" className="border-y border-line bg-charcoal md:hidden">
       <div className="container-site grid gap-8 py-10">
         {groups.map((g) => (
           <div key={g.title}>

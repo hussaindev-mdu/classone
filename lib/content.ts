@@ -1,199 +1,202 @@
 /**
- * Editable site copy. Items marked PLACEHOLDER must be replaced with real
- * information before launch.
+ * Editable site copy, taken from the ClassOne Consulting company profile.
+ * Items marked PLACEHOLDER must be replaced with real information before launch.
  */
-
-export type Discipline = "HR Consulting" | "Financial Advisory";
 
 export type Service = {
   slug: string;
   name: string;
-  discipline: Discipline;
+  /** One-line summary used in lists and cards. */
   description: string;
-  /** DRAFT COPY: review with ClassOne before launch. */
+  /** Full description from the company profile. */
   overview: string;
   includes: string[];
+  /** DRAFT COPY: short outcome statements, review with ClassOne before launch. */
   outcomes: string[];
 };
 
-export const hrServices: Service[] = [
+export const intro = {
+  label: "Company profile",
+  headline: "People-centred HR consulting.",
+  subline: "Practical HR partnership for stronger, more capable workplaces.",
+  experience:
+    "A founder-led HR consulting practice shaped by more than 14 years of experience across India and the UAE.",
+};
+
+export const aboutParagraphs = [
+  "ClassOne Consulting (OPC) Private Limited is an HR consulting firm founded to help organizations build clear, consistent and people-centred HR practices. The firm brings experienced HR leadership closer to growing businesses through practical advice, structured processes and hands-on support.",
+  "Its approach connects people practices with business priorities: attract the right talent, support managers, strengthen employee experience and make HR operations more dependable. Engagements can be shaped around a defined project or ongoing advisory support.",
+];
+
+export const vision =
+  "To be a trusted HR partner that helps organizations create fair, capable and high-performing workplaces where people and businesses can grow together.";
+
+export const mission =
+  "To make effective HR practices accessible and practical for organizations through thoughtful advice, reliable execution and a deep respect for people, performance and local context.";
+
+export const servicesIntro =
+  "ClassOne can support clients across the HR lifecycle. The scope is agreed to fit each organization’s size, sector, priorities and applicable local requirements.";
+
+export const services: Service[] = [
   {
-    slug: "recruitment-talent-acquisition",
-    name: "Recruitment & Talent Acquisition",
-    discipline: "HR Consulting",
-    description: "End-to-end hiring, from role definition to offer, for the people who move your business.",
+    slug: "talent-acquisition-workforce-planning",
+    name: "Talent Acquisition & Workforce Planning",
+    description: "Recruitment process design, selection guidance and workforce planning.",
     overview:
-      "We run the full hiring cycle for you: defining the role, sourcing through our network and job platforms, screening, coordinating interviews and closing the offer. You meet only candidates who fit the role, the team and the budget.",
+      "Recruitment process design, role and job description support, interview structure, selection guidance, workforce planning and succession discussions.",
     includes: [
-      "Role definition, job descriptions and salary benchmarking",
-      "Sourcing, screening and shortlisting",
-      "Interview coordination and candidate communication",
-      "Offer negotiation, onboarding handover and replacement guarantee",
+      "Recruitment process design",
+      "Role and job description support",
+      "Interview structure and selection guidance",
+      "Workforce planning and succession discussions",
     ],
-    outcomes: ["Shorter time-to-hire", "Better-fit hires who stay", "A repeatable hiring process"],
+    outcomes: ["A clear, repeatable hiring process", "Well-defined roles", "A plan for future workforce needs"],
   },
   {
-    slug: "candidate-assessment",
-    name: "Candidate Assessment",
-    discipline: "HR Consulting",
-    description: "Structured interviews and skills testing that separate potential from polish.",
+    slug: "hr-policies-governance-compliance",
+    name: "HR Policies, Governance & Compliance Support",
+    description: "Policies, documentation reviews, audit readiness and compliance coordination.",
     overview:
-      "We design assessments around what the role actually needs: structured interviews, practical skills tests, aptitude and behavioural evaluations. Every candidate is scored against the same criteria, so decisions are fair and defensible.",
+      "Policy and procedure development, HR documentation reviews, audit readiness, governance practices and practical compliance coordination. Advice is scoped to the applicable jurisdiction and professional remit.",
     includes: [
-      "Competency frameworks for each role",
-      "Structured interview guides and scorecards",
-      "Technical, aptitude and behavioural testing",
-      "Background and reference verification",
+      "Policy and procedure development",
+      "HR documentation reviews",
+      "Audit readiness and governance practices",
+      "Practical compliance coordination",
     ],
-    outcomes: ["Consistent, bias-aware hiring decisions", "Fewer mis-hires", "Clear evidence behind every offer"],
+    outcomes: ["Clear, consistent policies", "Audit-ready HR documentation", "Dependable governance practices"],
   },
   {
-    slug: "learning-development",
-    name: "Learning & Development",
-    discipline: "HR Consulting",
-    description: "Training programmes that build capability where your teams need it most.",
+    slug: "performance-employee-relations",
+    name: "Performance & Employee Relations",
+    description: "Performance frameworks, manager guidance, engagement and fair processes.",
     overview:
-      "We identify the skills gaps that hold your teams back and build training around them: leadership development for managers, functional upskilling, and onboarding programmes that get new joiners productive faster.",
+      "Performance management frameworks, manager guidance, employee engagement, grievance processes, disciplinary process support and workplace investigations.",
     includes: [
-      "Training needs analysis",
-      "Leadership and manager development programmes",
-      "Functional and soft-skills workshops",
-      "Onboarding programme design and impact measurement",
+      "Performance management frameworks",
+      "Manager guidance and employee engagement",
+      "Grievance and disciplinary process support",
+      "Workplace investigations",
     ],
-    outcomes: ["Stronger first-line managers", "Faster ramp-up for new hires", "Measurable skills growth"],
+    outcomes: ["Fair, well-run performance cycles", "Confident managers", "Stronger employee experience"],
   },
   {
-    slug: "employee-engagement",
-    name: "Employee Engagement",
-    discipline: "HR Consulting",
-    description: "Culture, feedback and retention frameworks that keep good people committed.",
+    slug: "learning-organizational-development",
+    name: "Learning & Organizational Development",
+    description: "Training plans, employee development, org design and change support.",
     overview:
-      "We measure how your people really feel, find the drivers behind attrition, and put practical programmes in place: recognition, feedback loops, HR policies and the everyday rituals that make a workplace worth staying in.",
+      "Learning needs assessment, training plans, employee development, organizational design support, change initiatives and manager capability building.",
     includes: [
-      "Engagement surveys and exit-interview analysis",
-      "HR policy and employee handbook design",
-      "Recognition and rewards programmes",
-      "Manager feedback and grievance frameworks",
+      "Learning needs assessment and training plans",
+      "Employee development",
+      "Organizational design support and change initiatives",
+      "Manager capability building",
     ],
-    outcomes: ["Lower attrition", "Higher engagement scores", "A culture people recommend"],
+    outcomes: ["Training aimed at real needs", "More capable managers", "Structures that support growth"],
+  },
+  {
+    slug: "compensation-benefits-payroll",
+    name: "Compensation, Benefits & Payroll Coordination",
+    description: "Pay and benefits review, benchmarking and payroll controls.",
+    overview:
+      "Pay and benefits process review, compensation benchmarking coordination, payroll controls and support for accurate, timely HR administration.",
+    includes: [
+      "Pay and benefits process review",
+      "Compensation benchmarking coordination",
+      "Payroll controls",
+      "Support for accurate, timely HR administration",
+    ],
+    outcomes: ["Accurate, timely HR administration", "Stronger payroll controls", "Informed pay decisions"],
+  },
+  {
+    slug: "hr-operations-systems-analytics",
+    name: "HR Operations, Systems & Analytics",
+    description: "Process improvement, HRIS/ERP support, HR metrics and budgeting.",
+    overview:
+      "HR process improvement, HRIS/ERP implementation support, HR metrics and MIS reporting, HR budgeting and operational administration.",
+    includes: [
+      "HR process improvement",
+      "HRIS/ERP implementation support",
+      "HR metrics and MIS reporting",
+      "HR budgeting and operational administration",
+    ],
+    outcomes: ["More dependable HR operations", "Useful HR reporting", "Systems your team can run"],
   },
 ];
 
-export const financeServices: Service[] = [
-  {
-    slug: "payroll-compensation",
-    name: "Payroll & Compensation",
-    discipline: "Financial Advisory",
-    description: "Accurate, on-time payroll and pay structures that are fair and competitive.",
-    overview:
-      "We run payroll accurately and on time, with every statutory deduction handled, and design pay structures that are competitive, tax-efficient and fair, so your people are paid correctly and your costs are predictable.",
-    includes: [
-      "Monthly payroll processing and payslips",
-      "PF, ESI, PT and TDS calculation and filing",
-      "Salary structuring and compensation benchmarking",
-      "Full and final settlements",
-    ],
-    outcomes: ["Zero-error, on-time payroll", "Statutory filings never missed", "Pay structures that retain talent"],
-  },
-  {
-    slug: "financial-growth-planning",
-    name: "Financial Growth & Planning",
-    discipline: "Financial Advisory",
-    description: "Budgets, forecasts and growth plans grounded in your real numbers.",
-    overview:
-      "We turn your accounts into a plan: budgets, cash-flow forecasts and growth scenarios that show what you can afford, when to hire, and where the next stage of growth will come from.",
-    includes: [
-      "Annual budgeting and rolling forecasts",
-      "Cash-flow planning and working-capital review",
-      "Growth scenarios and investment readiness",
-      "Monthly management reporting",
-    ],
-    outcomes: ["Decisions made on real numbers", "Healthy, predictable cash flow", "A funded growth roadmap"],
-  },
-  {
-    slug: "compliance-risk-management",
-    name: "Compliance & Risk Management",
-    discipline: "Financial Advisory",
-    description: "Statutory compliance, audits and controls handled before they become problems.",
-    overview:
-      "We keep your business on the right side of labour, tax and corporate regulations with a compliance calendar, regular audits and internal controls, and we fix gaps before they turn into penalties.",
-    includes: [
-      "Labour-law and statutory compliance audits",
-      "Compliance calendar and filing management",
-      "Internal controls and process review",
-      "Risk assessment and remediation plans",
-    ],
-    outcomes: ["No surprise penalties", "Audit-ready records", "Clear ownership of every obligation"],
-  },
-  {
-    slug: "performance-financial-strategy",
-    name: "Performance & Financial Strategy",
-    discipline: "Financial Advisory",
-    description: "KPIs and financial strategy that link people performance to business results.",
-    overview:
-      "We connect how your people perform with how your business performs: KPI frameworks, appraisal systems and incentive plans tied to financial targets, so everyone is pulling toward the same numbers.",
-    includes: [
-      "KPI and OKR framework design",
-      "Performance appraisal systems",
-      "Incentive and variable-pay plans",
-      "Cost and profitability analysis",
-    ],
-    outcomes: ["Goals everyone understands", "Pay linked to performance", "Better margins"],
-  },
-];
-
-export const allServices = [...hrServices, ...financeServices];
+/** Kept as an alias so existing imports keep working. */
+export const allServices = services;
 
 export function getService(slug: string) {
-  return allServices.find((s) => s.slug === slug);
+  return services.find((s) => s.slug === slug);
 }
 
 export function serviceNumber(service: Service) {
-  return String(allServices.indexOf(service) + 1).padStart(2, "0");
+  return String(services.indexOf(service) + 1).padStart(2, "0");
 }
+
+export const engagementOptions = [
+  {
+    title: "HR diagnostic and roadmap",
+    text: "A focused review of current practices with prioritized recommendations.",
+  },
+  {
+    title: "Defined HR project",
+    text: "A scoped delivery such as policy refresh, performance cycle setup or recruitment process improvement.",
+  },
+  {
+    title: "Ongoing HR advisory",
+    text: "Recurring support for leaders and managers, with agreed availability and priorities.",
+  },
+];
+
+export const founder = {
+  name: "Kumaran Ilangovan",
+  role: "Founder & CEO - Principal Consultant",
+  bio: [
+    "Kumaran is a senior HR professional with more than 14 years of progressive experience in human resources and administration across India and the UAE. He has held HR leadership and business partner roles in multicultural, multinational environments, including group-level responsibility supporting companies in the UAE and India.",
+    "His experience spans recruitment, HR strategy, employee relations, performance management, learning and development, compensation and benefits, HR policies, governance, compliance coordination, HR systems, analytics and budgeting. He has partnered with boards, executives, managers and employees to align people practices with operational and business needs.",
+  ],
+};
 
 export const whyPoints = [
   {
-    icon: "partner",
-    title: "One partner for HR and finance",
-    text: "People and money decisions made together, by one team that sees the whole picture.",
-  },
-  {
-    icon: "shield",
-    title: "Compliance first",
-    text: "Every engagement starts from statutory and regulatory requirements, not as an afterthought.",
+    icon: "person",
+    title: "Senior HR perspective",
+    text: "Leadership experience across group HR, business partnering and HR operations.",
   },
   {
     icon: "chart",
-    title: "Data-driven decisions",
-    text: "Recommendations backed by your numbers, benchmarks and measurable outcomes.",
+    title: "Practical implementation",
+    text: "Recommendations designed to be usable by managers and HR teams in day-to-day work.",
   },
   {
-    icon: "person",
-    title: "A dedicated consultant",
-    text: "One named consultant who knows your business and stays accountable from start to finish.",
+    icon: "shield",
+    title: "Cross-cultural experience",
+    text: "First-hand experience supporting people practices in India and the UAE.",
+  },
+  {
+    icon: "partner",
+    title: "Joined-up people practices",
+    text: "Support that connects recruitment, performance, development, employee relations and HR operations.",
   },
 ] as const;
 
-/**
- * PLACEHOLDER NUMBERS: replace with real, verifiable figures before launch.
- */
+/** Figures taken from the company profile. */
 export const stats = [
-  { value: 150, suffix: "+", label: "Clients served" }, // PLACEHOLDER
-  { value: 1200, suffix: "+", label: "Placements made" }, // PLACEHOLDER
-  { value: 10, suffix: "+", label: "Years of experience" }, // PLACEHOLDER
-  { value: 12, suffix: "", label: "Industries served" }, // PLACEHOLDER
+  { value: 14, suffix: "+", label: "Years of HR experience" },
+  { value: 6, suffix: "", label: "HR service areas" },
+  { value: 2, suffix: "", label: "Countries: India & UAE" },
+  { value: 3, suffix: "", label: "Ways to engage" },
 ];
 
 export const processSteps = [
-  { title: "Discovery", text: "We learn your business, goals and constraints." },
-  { title: "Assessment", text: "We audit your people, payroll and financial position." },
-  { title: "Strategy", text: "We design a clear, prioritised plan of action." },
-  { title: "Implementation", text: "We execute alongside your team, on schedule." },
-  { title: "Review", text: "We measure results and refine continuously." },
+  { title: "Understand", text: "Listen to the business, its people and the immediate challenge." },
+  { title: "Design", text: "Build a clear, proportionate plan with practical ownership." },
+  { title: "Implement", text: "Support delivery, review progress and improve the process." },
 ];
 
-/** PLACEHOLDER: edit freely. */
+/** PLACEHOLDER: not in the company profile. Edit freely. */
 export const industries = [
   "IT & Technology",
   "Manufacturing",
@@ -210,19 +213,19 @@ export const industries = [
 export const testimonials = [
   {
     quote:
-      "PLACEHOLDER: ClassOne rebuilt our hiring process and payroll in one quarter. For the first time HR and finance were working from the same plan.",
+      "PLACEHOLDER: ClassOne rebuilt our hiring process and HR policies in one quarter. Our managers finally had a clear, consistent way of working.",
     name: "Client Name",
     role: "Founder, Company Name",
   },
   {
     quote:
-      "PLACEHOLDER: Their compliance review caught issues we didn't know we had, and they fixed them without slowing the business down.",
+      "PLACEHOLDER: Their HR documentation review got us audit-ready without slowing the business down.",
     name: "Client Name",
     role: "Director of Operations, Company Name",
   },
   {
     quote:
-      "PLACEHOLDER: Having one dedicated consultant made all the difference. Clear advice, quick answers and real accountability.",
+      "PLACEHOLDER: Senior HR advice that was practical from day one. Clear answers and real accountability.",
     name: "Client Name",
     role: "CEO, Company Name",
   },

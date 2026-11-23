@@ -22,7 +22,7 @@ const sans = Inter({
   display: "swap",
 });
 
-const title = `ClassOne Consulting | HR Consulting & Financial Advisory in ${siteConfig.city}`;
+const title = `ClassOne Consulting | People-Centred HR Consulting in ${siteConfig.city}`;
 
 // Absolute URL: avoids the base path being applied twice on GitHub Pages.
 const ogImage = {
@@ -39,10 +39,12 @@ export const metadata: Metadata = {
   applicationName: siteConfig.name,
   keywords: [
     "HR consulting",
-    "financial advisory",
-    "recruitment",
-    "payroll",
-    "compliance",
+    "HR advisory",
+    "talent acquisition",
+    "HR policies",
+    "performance management",
+    "learning and development",
+    "HR operations",
     siteConfig.city,
     "ClassOne Consulting",
   ],

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
+import { aboutParagraphs } from "@/lib/content";
 
 export function About({ index = "01", moreLink = false }: { index?: string; moreLink?: boolean }) {
   return (
@@ -12,25 +13,14 @@ export function About({ index = "01", moreLink = false }: { index?: string; more
             About ClassOne
           </p>
           <h2 id="about-title" className="display text-balance text-[clamp(2.5rem,6vw,5.5rem)]">
-            Your people and your numbers, managed as <span className="text-red">one</span> strategy.
+            Clear, consistent, <span className="text-red">people-centred</span> HR.
           </h2>
         </Reveal>
 
         <Reveal delay={0.12} className="space-y-6 text-base leading-relaxed md:col-span-5 md:self-end md:text-lg">
-          {/*
-            PLACEHOLDER: replace these two paragraphs with ClassOne's real
-            founding story and approach before launch.
-          */}
-          <p>
-            <span className="label mr-2 !text-red-bright">[Placeholder]</span>
-            ClassOne Consulting was founded in [YEAR] by [FOUNDER NAME] to give growing businesses in Chennai the kind of
-            HR and financial guidance usually reserved for large corporations.
-          </p>
-          <p>
-            <span className="label mr-2 !text-red-bright">[Placeholder]</span>
-            We work as an extension of your leadership team: we start with a clear diagnosis, build a structure that is
-            compliant from day one, and stay accountable for results long after the plan is delivered.
-          </p>
+          {aboutParagraphs.map((p) => (
+            <p key={p.slice(0, 24)}>{p}</p>
+          ))}
           {moreLink && (
             <Link
               href="/about"

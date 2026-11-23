@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { siteConfig, navLinks } from "@/lib/site-config";
+import { siteConfig, navLinks, addressLine } from "@/lib/site-config";
 import { allServices } from "@/lib/content";
 import { Logo } from "@/components/ui/Logo";
 import { InstagramIcon, LinkedInIcon } from "@/components/ui/Icons";
 
 export function Footer() {
   const year = new Date().getFullYear();
-  const { address } = siteConfig;
   return (
     <footer className="border-t border-line bg-charcoal">
       <div className="container-site grid gap-12 py-16 md:grid-cols-12 md:py-20">
@@ -16,7 +15,7 @@ export function Footer() {
           </Link>
           <p className="label mt-6 !text-fg-body">{siteConfig.tagline}</p>
           <p className="mt-6 max-w-sm text-[15px] leading-relaxed">
-            {address.street}, {address.locality}, {address.region} {address.postalCode}
+            {addressLine}
           </p>
         </div>
 
@@ -89,8 +88,8 @@ export function Footer() {
       </div>
       <div className="border-t border-line">
         <div className="container-site flex flex-col gap-2 py-6 text-xs text-fg-muted md:flex-row md:justify-between">
-          <p>© {year} ClassOne Consulting. All rights reserved.</p>
-          <p className="uppercase tracking-wide2">HR Consulting | Financial Advisory</p>
+          <p>© {year} {siteConfig.legalName}. All rights reserved.</p>
+          <p className="uppercase tracking-wide2">People | Performance | Progress</p>
         </div>
       </div>
     </footer>
