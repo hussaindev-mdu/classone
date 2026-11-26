@@ -43,9 +43,9 @@ export function Services({ index = "02", id = "services" }: { index?: string; id
           label="Services"
           title={
             <>
-              Support across
+              The complete
               <br />
-              the HR lifecycle.
+              employee lifecycle.
             </>
           }
           intro={servicesIntro}

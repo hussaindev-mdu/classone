@@ -4,6 +4,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { About } from "@/components/sections/About";
 import { VisionMission } from "@/components/sections/VisionMission";
 import { Founder } from "@/components/sections/Founder";
+import { Partnership } from "@/components/sections/Partnership";
 import { WhyClassOne } from "@/components/sections/WhyClassOne";
 import { Numbers } from "@/components/sections/Numbers";
 import { Industries } from "@/components/sections/Industries";
@@ -29,10 +30,11 @@ export default function AboutPage() {
       <About index="01" />
       <VisionMission />
       <Founder index="02" />
-      <WhyClassOne index="03" />
+      <Partnership index="03" />
+      <WhyClassOne index="04" />
       <Numbers />
-      <Industries index="04" />
-      {/* <Testimonials sectionIndex="05" /> */}
+      <Industries index="05" />
+      {/* <Testimonials sectionIndex="06" /> */}
       <CtaBand />
     </>
   );

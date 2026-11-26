@@ -5,26 +5,15 @@ import { usePathname } from "next/navigation";
 import { whatsappHref } from "@/lib/site-config";
 import { WhatsAppIcon } from "./Icons";
 
-/**
- * Floating WhatsApp button. Hidden during the first 25% of the hero pin so it
- * never covers the opening frame, then fades in. On pages without the hero
- * it is always visible.
- */
+/** Floating WhatsApp button. Fades in once the visitor starts scrolling. */
 export function WhatsAppButton() {
   const [visible, setVisible] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
     const update = () => {
-      const hero = document.getElementById("hero");
-      const vh = window.innerHeight;
-      let threshold = -1; // pages without the hero: always visible
-      if (hero) {
-        const top = hero.getBoundingClientRect().top + window.scrollY;
-        const pin = hero.offsetHeight - vh;
-        threshold = pin > 10 ? top + pin * 0.25 : top + vh * 0.25;
-      }
-      setVisible(window.scrollY > threshold);
+      // Home page: wait until the hero is partly scrolled; elsewhere: always visible.
+      setVisible(pathname !== "/" || window.scrollY > window.innerHeight * 0.25);
     };
     update();
     window.addEventListener("scroll", update, { passive: true });

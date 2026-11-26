@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "prepare-frames": "node scripts/prepare-frames.mjs",
     "brand-assets": "node scripts/brand-assets.mjs",
     "build:pages": "GITHUB_PAGES=true next build",
     "preview:pages": "npx serve@14 out -l 4000"

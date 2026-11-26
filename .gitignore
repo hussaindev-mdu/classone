@@ -7,7 +7,6 @@ out
 *.tsbuildinfo
 next-env.d.ts
 .DS_Store
-public/.frames-staging
 
 # Original source frames (already converted into public/frames)
 classone_hero_frames

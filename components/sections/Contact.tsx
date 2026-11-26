@@ -32,8 +32,11 @@ export function Contact({ index = "07", headingLevel = "h2" }: { index?: string;
             <div>
               <dt className="label mb-1.5">Email</dt>
               <dd>
-                <a href={`mailto:${siteConfig.email}`} className="text-fg hover:text-red-bright">
+                <a href={`mailto:${siteConfig.email}`} className="block text-fg hover:text-red-bright">
                   {siteConfig.email}
+                </a>
+                <a href={`mailto:${siteConfig.founderEmail}`} className="mt-1 block text-fg hover:text-red-bright">
+                  {siteConfig.founderEmail}
                 </a>
               </dd>
             </div>

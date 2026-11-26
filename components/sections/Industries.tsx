@@ -1,7 +1,7 @@
 import { industries } from "@/lib/content";
 import { Reveal } from "@/components/ui/Reveal";
 
-/** Industry tags. PLACEHOLDER list: edit `industries` in lib/content.ts. */
+/** Client segments: edit `industries` in lib/content.ts. */
 export function Industries({ index = "05" }: { index?: string }) {
   return (
     <section aria-labelledby="industries-title" className="border-t border-line py-24 md:py-32">
@@ -10,10 +10,10 @@ export function Industries({ index = "05" }: { index?: string }) {
           <p className="label mb-5 flex items-center gap-4">
             <span className="text-red-bright">{index}</span>
             <span aria-hidden className="h-px w-10 bg-red" />
-            Industries
+            Who we work with
           </p>
           <h2 id="industries-title" className="display text-[clamp(2rem,4vw,3.25rem)]">
-            Sectors we serve.
+            Who we partner with.
           </h2>
         </Reveal>
         <Reveal delay={0.1} className="md:col-span-8 md:self-end">

@@ -15,19 +15,27 @@ export const siteConfig = {
   tagline: "People. Performance. Progress.",
   descriptor: "People-Centred HR Consulting",
   description:
-    "ClassOne Consulting is a founder-led HR consulting firm in Chennai helping organizations build clear, consistent and people-centred HR practices, shaped by more than 14 years of experience across India and the UAE.",
+    "ClassOne Consulting is your complete HR consulting partner in Chennai. We help startups, SMEs and established organisations build structured HR functions and compliant, efficient people management practices.",
 
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.classoneconsulting.in", // PLACEHOLDER domain
 
   city: CITY,
 
-  // Add street and postalCode when available; empty values are skipped on the site.
+  // Registered office / principal place of business (GST REG-06, MCA record).
   address: {
-    street: "",
+    street: "No. 4/568, 1st Cross Street, Lakshmi Nagar, Thoraipakkam",
     locality: CITY,
     region: "Tamil Nadu",
-    postalCode: "",
+    postalCode: "600097",
     country: "IN",
+  },
+
+  // Statutory registration numbers (public; verifiable on mca.gov.in and gst.gov.in).
+  // Do not publish PAN/TAN or certificate scans.
+  registration: {
+    cin: "U78300TN2026OPC200036",
+    gstin: "33AAOCC4123B1Z7",
+    incorporated: "2026-11-12",
   },
 
   phone: {
@@ -35,7 +43,10 @@ export const siteConfig = {
     tel: "+919025412330",
   },
 
-  email: "classoneconsult.hr@gmail.com",
+  // General enquiries.
+  email: "info@class1consulting.com",
+  // Founder's direct address. Client wrote "class1conssulting.com" (double s); assumed typo. CONFIRM.
+  founderEmail: "kumaran@class1consulting.com",
 
   whatsapp: {
     // Digits only, with country code.

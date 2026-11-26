@@ -1,10 +1,8 @@
 import type { Config } from "tailwindcss";
-import frames from "./lib/frames-manifest.json";
 
 /**
  * ClassOne design tokens.
- * - ink: page background, sampled from hero frame 1 by `npm run prepare-frames`
- *   so the canvas sequence has no visible edges.
+ * - ink: page background, matched to the hero building image's backdrop.
  * - red: sampled from the ClassOne logo (#CD171F). One accent only.
  */
 const config: Config = {
@@ -12,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: frames.background,
+        ink: "#090e10",
         charcoal: "#14161A",
         line: "rgba(255,255,255,0.10)",
         red: {

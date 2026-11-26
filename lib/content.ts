@@ -1,14 +1,15 @@
 /**
- * Editable site copy, taken from the ClassOne Consulting company profile.
- * Items marked PLACEHOLDER must be replaced with real information before launch.
+ * Editable site copy, from the ClassOne company profile and the client's
+ * service brief (26 Nov 2026). Items marked PLACEHOLDER or DRAFT must be
+ * confirmed with ClassOne before launch.
  */
 
 export type Service = {
   slug: string;
   name: string;
-  /** One-line summary used in lists and cards. */
+  /** One-line summary used in lists and cards (client's first sentence). */
   description: string;
-  /** Full description from the company profile. */
+  /** Full description from the client's service brief. */
   overview: string;
   includes: string[];
   /** DRAFT COPY: short outcome statements, review with ClassOne before launch. */
@@ -18,6 +19,9 @@ export type Service = {
 export const intro = {
   label: "Company profile",
   headline: "People-centred HR consulting.",
+  positioning: "Your Complete HR Consulting Partner",
+  positioningText:
+    "We partner with startups, SMEs and established organisations to build structured HR functions, strengthen workforce capabilities and establish compliant, efficient people management practices.",
   subline: "Practical HR partnership for stronger, more capable workplaces.",
   experience:
     "A founder-led HR consulting practice shaped by more than 14 years of experience across India and the UAE.",
@@ -35,92 +39,163 @@ export const mission =
   "To make effective HR practices accessible and practical for organizations through thoughtful advice, reliable execution and a deep respect for people, performance and local context.";
 
 export const servicesIntro =
-  "ClassOne can support clients across the HR lifecycle. The scope is agreed to fit each organization’s size, sector, priorities and applicable local requirements.";
+  "Our HR service portfolio covers the complete employee lifecycle, from workforce planning and recruitment to employee separation and statutory compliance.";
 
 export const services: Service[] = [
   {
+    slug: "hr-strategic-management",
+    name: "HR Strategic Management",
+    description: "We develop and implement strategic HR frameworks aligned with your business goals.",
+    overview:
+      "We develop and implement strategic HR frameworks aligned with your business goals. We provide HR advisory, organisational strategy, workforce optimisation and leadership support.",
+    includes: [
+      "Strategic HR frameworks aligned with business goals",
+      "HR advisory",
+      "Organisational strategy and workforce optimisation",
+      "Leadership support",
+    ],
+    outcomes: ["HR aligned with business goals", "An optimised workforce", "Confident, supported leadership"],
+  },
+  {
     slug: "talent-acquisition-workforce-planning",
     name: "Talent Acquisition & Workforce Planning",
-    description: "Recruitment process design, selection guidance and workforce planning.",
+    description: "We manage end-to-end recruitment, talent sourcing, screening, interviewing and onboarding.",
     overview:
-      "Recruitment process design, role and job description support, interview structure, selection guidance, workforce planning and succession discussions.",
+      "We manage end-to-end recruitment, talent sourcing, screening, interviewing and onboarding. We help businesses plan manpower requirements and build the right workforce.",
     includes: [
-      "Recruitment process design",
-      "Role and job description support",
-      "Interview structure and selection guidance",
-      "Workforce planning and succession discussions",
+      "End-to-end recruitment and talent sourcing",
+      "Screening and interviewing",
+      "Onboarding",
+      "Manpower planning",
     ],
-    outcomes: ["A clear, repeatable hiring process", "Well-defined roles", "A plan for future workforce needs"],
+    outcomes: ["The right people in the right roles", "A smoother hiring process", "A clear manpower plan"],
   },
   {
-    slug: "hr-policies-governance-compliance",
-    name: "HR Policies, Governance & Compliance Support",
-    description: "Policies, documentation reviews, audit readiness and compliance coordination.",
+    slug: "hr-policies-procedures-governance",
+    name: "HR Policies, Procedures & Employee Governance",
+    description: "We design employee handbooks, HR policies, SOPs and workplace guidelines.",
     overview:
-      "Policy and procedure development, HR documentation reviews, audit readiness, governance practices and practical compliance coordination. Advice is scoped to the applicable jurisdiction and professional remit.",
+      "We design employee handbooks, HR policies, SOPs and workplace guidelines. We support employment governance, statutory compliance and HR documentation.",
     includes: [
-      "Policy and procedure development",
-      "HR documentation reviews",
-      "Audit readiness and governance practices",
-      "Practical compliance coordination",
+      "Employee handbooks and HR policies",
+      "SOPs and workplace guidelines",
+      "Employment governance and statutory compliance",
+      "HR documentation",
     ],
-    outcomes: ["Clear, consistent policies", "Audit-ready HR documentation", "Dependable governance practices"],
+    outcomes: ["Clear, consistent policies", "Compliant HR practices", "Well-kept HR documentation"],
   },
   {
-    slug: "performance-employee-relations",
-    name: "Performance & Employee Relations",
-    description: "Performance frameworks, manager guidance, engagement and fair processes.",
+    slug: "hr-operations",
+    name: "HR Operations",
+    description: "We manage day-to-day HR activities, employee records, onboarding, transfers and exit formalities.",
     overview:
-      "Performance management frameworks, manager guidance, employee engagement, grievance processes, disciplinary process support and workplace investigations.",
+      "We manage day-to-day HR activities, employee records, onboarding, transfers and exit formalities. We streamline HR workflows to improve operational efficiency and accuracy.",
     includes: [
-      "Performance management frameworks",
-      "Manager guidance and employee engagement",
-      "Grievance and disciplinary process support",
-      "Workplace investigations",
+      "Day-to-day HR activities",
+      "Employee records management",
+      "Onboarding, transfers and exit formalities",
+      "Streamlined HR workflows",
     ],
-    outcomes: ["Fair, well-run performance cycles", "Confident managers", "Stronger employee experience"],
+    outcomes: ["Efficient HR operations", "Accurate employee records", "Less admin for managers"],
   },
   {
-    slug: "learning-organizational-development",
-    name: "Learning & Organizational Development",
-    description: "Training plans, employee development, org design and change support.",
+    slug: "performance-management-system",
+    name: "Performance Management System",
+    description: "We design performance appraisal frameworks, KPIs, KRAs and employee evaluation processes.",
     overview:
-      "Learning needs assessment, training plans, employee development, organizational design support, change initiatives and manager capability building.",
+      "We design performance appraisal frameworks, KPIs, KRAs and employee evaluation processes. We support goal setting, performance reviews, feedback and improvement plans.",
     includes: [
-      "Learning needs assessment and training plans",
-      "Employee development",
-      "Organizational design support and change initiatives",
-      "Manager capability building",
+      "Performance appraisal frameworks",
+      "KPIs, KRAs and evaluation processes",
+      "Goal setting and performance reviews",
+      "Feedback and improvement plans",
     ],
-    outcomes: ["Training aimed at real needs", "More capable managers", "Structures that support growth"],
+    outcomes: ["Clear goals for every role", "Fair, consistent reviews", "Performance that improves"],
   },
   {
-    slug: "compensation-benefits-payroll",
-    name: "Compensation, Benefits & Payroll Coordination",
-    description: "Pay and benefits review, benchmarking and payroll controls.",
+    slug: "payroll-processing-coordination",
+    name: "Payroll Processing & Coordination",
+    description: "We provide monthly payroll processing, salary calculations, payslips and payroll reconciliation.",
     overview:
-      "Pay and benefits process review, compensation benchmarking coordination, payroll controls and support for accurate, timely HR administration.",
+      "We provide monthly payroll processing, salary calculations, payslips and payroll reconciliation. We coordinate payroll inputs, deductions, reimbursements and statutory payroll requirements.",
     includes: [
-      "Pay and benefits process review",
-      "Compensation benchmarking coordination",
-      "Payroll controls",
-      "Support for accurate, timely HR administration",
+      "Monthly payroll processing and salary calculations",
+      "Payslips and payroll reconciliation",
+      "Payroll inputs, deductions and reimbursements",
+      "Statutory payroll requirements",
     ],
-    outcomes: ["Accurate, timely HR administration", "Stronger payroll controls", "Informed pay decisions"],
+    outcomes: ["Accurate, on-time payroll", "Reconciled payroll records", "Statutory requirements met"],
   },
   {
-    slug: "hr-operations-systems-analytics",
-    name: "HR Operations, Systems & Analytics",
-    description: "Process improvement, HRIS/ERP support, HR metrics and budgeting.",
+    slug: "compensation-benefits",
+    name: "Compensation & Benefits",
+    description: "We design salary structures, compensation frameworks, incentive plans and employee benefits.",
     overview:
-      "HR process improvement, HRIS/ERP implementation support, HR metrics and MIS reporting, HR budgeting and operational administration.",
+      "We design salary structures, compensation frameworks, incentive plans and employee benefits. We provide CTC analysis, salary benchmarking and compensation advisory services.",
     includes: [
-      "HR process improvement",
-      "HRIS/ERP implementation support",
-      "HR metrics and MIS reporting",
-      "HR budgeting and operational administration",
+      "Salary structures and compensation frameworks",
+      "Incentive plans and employee benefits",
+      "CTC analysis and salary benchmarking",
+      "Compensation advisory",
     ],
-    outcomes: ["More dependable HR operations", "Useful HR reporting", "Systems your team can run"],
+    outcomes: ["Competitive, fair pay", "Structured incentives", "Informed pay decisions"],
+  },
+  {
+    slug: "learning-organisational-development",
+    name: "Learning & Organisational Development",
+    description: "We identify organisational skill gaps and develop learning strategies.",
+    overview:
+      "We identify organisational skill gaps and develop learning strategies. We support leadership development, talent development and organisational effectiveness.",
+    includes: [
+      "Organisational skill-gap analysis",
+      "Learning strategies",
+      "Leadership and talent development",
+      "Organisational effectiveness",
+    ],
+    outcomes: ["Skill gaps closed", "Stronger leaders", "A more effective organisation"],
+  },
+  {
+    slug: "training-development",
+    name: "Training & Development",
+    description: "We coordinate employee training programmes, induction, behavioural and technical training.",
+    overview:
+      "We coordinate employee training programmes, induction, behavioural and technical training. We support training needs analysis, programme evaluation and employee skill enhancement.",
+    includes: [
+      "Employee training programmes and induction",
+      "Behavioural and technical training",
+      "Training needs analysis",
+      "Programme evaluation and skill enhancement",
+    ],
+    outcomes: ["Faster ramp-up for new joiners", "Training that meets real needs", "Measurable skill growth"],
+  },
+  {
+    slug: "employee-engagement-welfare",
+    name: "Employee Engagement & Welfare",
+    description: "We develop employee engagement initiatives, employee welfare programmes and recognition schemes.",
+    overview:
+      "We develop employee engagement initiatives, employee welfare programmes and recognition schemes. We support employee satisfaction surveys, retention strategies and workplace well-being initiatives.",
+    includes: [
+      "Employee engagement initiatives",
+      "Employee welfare programmes and recognition schemes",
+      "Employee satisfaction surveys",
+      "Retention strategies and workplace well-being",
+    ],
+    outcomes: ["A more engaged workforce", "Better retention", "A healthier workplace"],
+  },
+  {
+    slug: "employee-separation-statutory-settlements",
+    name: "Employee Separation & Statutory Settlements",
+    // DRAFT COPY: the client's text for this service was cut off ("Read more"). Confirm with ClassOne.
+    description: "We manage employee separations, exit formalities and full and final settlements.",
+    overview:
+      "We manage employee separations, exit formalities and full and final settlements. We support statutory settlement requirements and exit documentation.",
+    includes: [
+      "Employee separation process",
+      "Exit formalities",
+      "Full and final settlements",
+      "Statutory settlement requirements and exit documentation",
+    ],
+    outcomes: ["Smooth, respectful exits", "Settlements done right", "Compliant exit records"],
   },
 ];
 
@@ -185,7 +260,7 @@ export const whyPoints = [
 /** Figures taken from the company profile. */
 export const stats = [
   { value: 14, suffix: "+", label: "Years of HR experience" },
-  { value: 6, suffix: "", label: "HR service areas" },
+  { value: 11, suffix: "", label: "HR services" },
   { value: 2, suffix: "", label: "Countries: India & UAE" },
   { value: 3, suffix: "", label: "Ways to engage" },
 ];
@@ -196,15 +271,8 @@ export const processSteps = [
   { title: "Implement", text: "Support delivery, review progress and improve the process." },
 ];
 
-/** PLACEHOLDER: not in the company profile. Edit freely. */
-export const industries = [
-  "IT & Technology",
-  "Manufacturing",
-  "Healthcare",
-  "Retail",
-  "Startups",
-  "Finance",
-];
+/** Client segments, from the client's service positioning. */
+export const industries = ["Startups", "SMEs", "Established organisations"];
 
 /**
  * PLACEHOLDER TESTIMONIALS: these are NOT real client reviews.
@@ -230,3 +298,10 @@ export const testimonials = [
     role: "CEO, Company Name",
   },
 ];
+
+/** Partnership, as stated by ClassOne (26 Nov 2026). Text only: no partner logo without their permission. */
+export const partnership = {
+  role: "Authorised Franchise / Recruitment Partner",
+  partner: "Hirevoo Recruitment and Marketing Private Limited",
+  relatedServiceSlug: "talent-acquisition-workforce-planning",
+};

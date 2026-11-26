@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { intro } from "@/lib/content";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Services } from "@/components/sections/Services";
 import { Industries } from "@/components/sections/Industries";
@@ -7,7 +8,7 @@ import { CtaBand } from "@/components/sections/CtaBand";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Talent acquisition, HR policies and compliance, performance and employee relations, learning and development, compensation and payroll, and HR operations: HR consulting across the lifecycle.",
+    "Eleven HR services covering the complete employee lifecycle, from HR strategy, workforce planning and recruitment to payroll, performance, training, engagement and employee separation.",
   alternates: { canonical: "/services" },
 };
 
@@ -16,8 +17,8 @@ export default function ServicesPage() {
     <>
       <PageHeader
         label="Services"
-        title="HR consulting services."
-        intro="Practical HR partnership for stronger, more capable workplaces."
+        title="Your complete HR consulting partner."
+        intro={intro.positioningText}
         crumbs={[{ label: "Services" }]}
       />
       <Services index="01" id="all-services" />

@@ -19,11 +19,11 @@ const faqs = [
   },
   {
     q: "Can you work with a business of our size?",
-    a: "Yes. The scope of every engagement is agreed to fit each organization’s size, sector, priorities and applicable local requirements.",
+    a: "Yes. We partner with startups, SMEs and established organisations. The scope of every engagement is agreed to fit each organization’s size, sector, priorities and applicable local requirements.",
   },
   {
     q: "Which areas of HR do you cover?",
-    a: "Support across the HR lifecycle: talent acquisition and workforce planning, HR policies and compliance support, performance and employee relations, learning and organizational development, compensation, benefits and payroll coordination, and HR operations, systems and analytics.",
+    a: "The complete employee lifecycle: HR strategic management, talent acquisition and workforce planning, HR policies and governance, HR operations, performance management, payroll, compensation and benefits, learning and organisational development, training, employee engagement and welfare, and employee separation and statutory settlements.",
   },
   {
     q: "How is pricing structured?",

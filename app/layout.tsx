@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Oswald } from "next/font/google";
 import { MotionConfig } from "framer-motion";
-import manifest from "@/lib/frames-manifest.json";
 import { siteConfig } from "@/lib/site-config";
 import { Nav } from "@/components/ui/Nav";
 import { Footer } from "@/components/sections/Footer";
@@ -67,13 +66,13 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: manifest.background,
+  themeColor: "#090e10",
   colorScheme: "dark",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-IN" className={`${display.variable} ${sans.variable}`} style={{ backgroundColor: manifest.background }}>
+    <html lang="en-IN" className={`${display.variable} ${sans.variable}`} style={{ backgroundColor: "#090e10" }}>
       <body>
         <a
           href="#main"

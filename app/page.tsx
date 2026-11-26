@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-// import { Hero } from "@/components/hero/Hero";
-// import { MobileServicesList } from "@/components/hero/MobileServicesList";
 import { StaticHero } from "@/components/sections/StaticHero";
 import { About } from "@/components/sections/About";
 import { Services } from "@/components/sections/Services";
@@ -14,8 +12,6 @@ export const metadata: Metadata = { alternates: { canonical: "/" } };
 export default function Home() {
   return (
     <>
-      {/* <Hero /> */}
-      {/* <MobileServicesList /> */}
       <StaticHero />
       <About index="01" moreLink />
       <Services index="02" />

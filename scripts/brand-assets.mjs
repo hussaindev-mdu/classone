@@ -6,12 +6,12 @@
  *   - public/logo-mark.png   C1 mark only, transparent
  *   - app/icon.png           favicon (C1 mark on the page background)
  *   - app/apple-icon.png     180px touch icon
- *   - public/og-image.jpg    1200x630 social card built from hero frame 1
+ *   - public/og-image.jpg    1200x630 social card built from public/hero.webp
  *
  * When the official vector/PNG logo is available, drop it in as public/logo.png
  * (and public/logo-mark.png) and you can skip this script.
  *
- * Usage: npm run brand-assets   (run after `npm run prepare-frames`)
+ * Usage: npm run brand-assets
  */
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -19,10 +19,7 @@ import sharp from "sharp";
 
 const ROOT = process.cwd();
 const SRC = path.join(ROOT, "brand", "logo-source.jpg");
-const manifest = JSON.parse(
-  await fs.readFile(path.join(ROOT, "lib", "frames-manifest.json"), "utf8"),
-);
-const PAGE_BG = manifest.background ?? "#0b0c0e";
+const PAGE_BG = "#090e10"; // matches `ink` in tailwind.config.ts
 
 // Crop boxes measured on the 1206x709 source image.
 const LOCKUP = { left: 150, top: 168, width: 860, height: 262 };
@@ -127,7 +124,7 @@ await icon(64, path.join(ROOT, "app", "icon.png"), 0.1);
 await icon(180, path.join(ROOT, "app", "apple-icon.png"), 0.16);
 
 // Open Graph image: frame 1 (assembled building) centred on the page background.
-const frame1 = path.join(ROOT, "public", "frames", "frame_0001.webp");
+const frame1 = path.join(ROOT, "public", "hero.webp");
 const building = await sharp(frame1).resize(1120, 630, { fit: "cover" }).toBuffer();
 await sharp({
   create: { width: 1200, height: 630, channels: 3, background: PAGE_BG },

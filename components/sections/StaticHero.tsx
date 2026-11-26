@@ -6,7 +6,7 @@ import { withBase } from "@/lib/base-path";
 const highlights = ["14+ years of HR experience", "India & UAE", "Founder-led practice"];
 
 /**
- * Static home-page hero (used while the scroll-scrubbed animation is off).
+ * Home-page hero.
  * Desktop: building image on the right, fading into the page on the left.
  * Mobile: image on top, copy below.
  */
@@ -16,7 +16,7 @@ export function StaticHero() {
       {/* Image */}
       <div className="relative mt-[72px] aspect-[16/10] w-full md:absolute md:inset-y-0 md:right-0 md:mt-0 md:aspect-auto md:w-[68%]">
         <Image
-          src={withBase("/frames/frame_0001.webp")}
+          src={withBase("/hero.webp")}
           alt="The ClassOne Consulting office building at night with red accent lighting"
           fill
           priority
@@ -34,9 +34,9 @@ export function StaticHero() {
         <div className="max-w-2xl">
           <p className="label mb-6 flex items-center gap-4">
             <span aria-hidden className="h-px w-10 bg-red" />
-            HR Consulting · Chennai, India
+            {intro.positioning}
           </p>
-          <h1 id="home-title" className="display text-[clamp(3rem,7.5vw,7rem)] leading-[0.95]">
+          <h1 id="home-title" className="display text-[clamp(2.5rem,5.5vw,5rem)] leading-[0.95]">
             People<span className="text-red">.</span>
             <br />
             Performance<span className="text-red">.</span>
@@ -44,7 +44,7 @@ export function StaticHero() {
             Progress<span className="text-red">.</span>
           </h1>
           <p className="mt-8 max-w-lg text-pretty text-base leading-relaxed text-fg-body md:text-lg">
-            {intro.subline} {intro.experience}
+            {intro.positioningText}
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <ButtonLink href="/contact">Book a consultation</ButtonLink>

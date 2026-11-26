@@ -33,13 +33,6 @@ const nextConfig: NextConfig = {
         async headers() {
           return [
             {
-              // Hero frame sequences: long-lived cache, revalidated in the background.
-              source: "/:dir(frames|frames-mobile)/:file*",
-              headers: [
-                { key: "Cache-Control", value: "public, max-age=2592000, stale-while-revalidate=86400" },
-              ],
-            },
-            {
               source: "/:path*",
               headers: [
                 { key: "X-Content-Type-Options", value: "nosniff" },
