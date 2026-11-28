@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState, type ReactNode } from "react";
+import { useId, useState } from "react";
 import { useForm, type FieldErrors } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AnimatePresence, motion } from "framer-motion";
@@ -13,6 +13,7 @@ import {
   type ContactInput,
 } from "@/lib/contact-schema";
 import { Button } from "@/components/ui/Button";
+import { Field, inputClass, describedBy, SelectChevron as Chevron } from "@/components/ui/FormField";
 import { submitContact } from "@/lib/submit-contact";
 import { EASE } from "@/lib/motion";
 
@@ -21,69 +22,6 @@ type Status =
   | { state: "submitting" }
   | { state: "success" }
   | { state: "error"; message: string };
-
-const inputBase =
-  "block w-full border-0 border-b bg-transparent px-0 py-3 text-base text-fg placeholder:text-white/30 transition-colors duration-600 ease-brand focus:outline-none focus:ring-0 focus-visible:outline-none";
-
-function inputClass(invalid: boolean) {
-  return `${inputBase} ${invalid ? "border-red-bright" : "border-white/20 hover:border-white/40 focus:border-red"}`;
-}
-
-function Field({
-  id,
-  label,
-  required,
-  error,
-  hint,
-  children,
-  className = "",
-}: {
-  id: string;
-  label: string;
-  required?: boolean;
-  error?: string;
-  hint?: string;
-  children: ReactNode;
-  className?: string;
-}) {
-  return (
-    <div className={className}>
-      <label htmlFor={id} className="label block !text-fg-body">
-        {label}
-        {required ? (
-          <span className="text-red-bright" aria-hidden>
-            {" "}
-            *
-          </span>
-        ) : (
-          <span className="normal-case tracking-normal text-fg-muted"> (optional)</span>
-        )}
-      </label>
-      {children}
-      {hint && !error && (
-        <p id={`${id}-hint`} className="mt-2 text-xs text-fg-muted">
-          {hint}
-        </p>
-      )}
-      {error && (
-        <p id={`${id}-error`} className="mt-2 text-sm text-red-bright">
-          {error}
-        </p>
-      )}
-    </div>
-  );
-}
-
-function describedBy(id: string, error?: unknown, hint?: boolean) {
-  if (error) return `${id}-error`;
-  return hint ? `${id}-hint` : undefined;
-}
-
-const Chevron = () => (
-  <svg aria-hidden viewBox="0 0 12 12" className="pointer-events-none absolute right-0 top-1/2 h-3 w-3 -translate-y-1/2 text-fg-body" fill="none" stroke="currentColor" strokeWidth="1.5">
-    <path d="m2 4 4 4 4-4" />
-  </svg>
-);
 
 /** The success panel mounts after the form's exit animation; focus it then so screen readers announce it. */
 const focusOnMount = (el: HTMLDivElement | null) => el?.focus();

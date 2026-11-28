@@ -14,6 +14,8 @@ export type Service = {
   includes: string[];
   /** DRAFT COPY: short outcome statements, review with ClassOne before launch. */
   outcomes: string[];
+  /** Optional named core offerings shown as panels on the service page. */
+  highlights?: { title: string; text: string }[];
 };
 
 export const intro = {
@@ -85,30 +87,40 @@ export const services: Service[] = [
     outcomes: ["Clear, consistent policies", "Compliant HR practices", "Well-kept HR documentation"],
   },
   {
+    // Slug kept from the earlier "HR Operations" name so existing links keep working.
     slug: "hr-operations",
-    name: "HR Operations",
-    description: "We manage day-to-day HR activities, employee records, onboarding, transfers and exit formalities.",
+    name: "HR Operations & Business Partnering",
+    description:
+      "End-to-end HR operational support, partnering with business leaders to align people practices with organizational goals.",
     overview:
-      "We manage day-to-day HR activities, employee records, onboarding, transfers and exit formalities. We streamline HR workflows to improve operational efficiency and accuracy.",
+      "Provides end-to-end HR operational support while partnering with business leaders to align people practices with organizational goals. The service covers employee lifecycle administration, HR policies and compliance, workforce planning, performance management, employee engagement, and people data. It also helps managers address team needs, improve processes, and make informed people decisions that support business performance and growth.",
     includes: [
-      "Day-to-day HR activities",
-      "Employee records management",
-      "Onboarding, transfers and exit formalities",
-      "Streamlined HR workflows",
+      "Employee lifecycle administration",
+      "HR policies and compliance",
+      "Workforce planning and performance management",
+      "Employee engagement and people data",
+      "Attendance Management System (AMS)",
+      "Manager support, process improvement and people decisions",
     ],
-    outcomes: ["Efficient HR operations", "Accurate employee records", "Less admin for managers"],
+    outcomes: ["People practices aligned with business goals", "Dependable HR operations", "Better-informed people decisions"],
+    highlights: [
+      {
+        title: "Attendance Management System (AMS)",
+        text: "Implement and manage attendance processes, including attendance tracking, shift and roster administration, leave and regularization workflows, exception monitoring, and coordination with payroll. Provide managers with timely attendance insights to support workforce planning, policy compliance, and informed people decisions.",
+      },
+    ],
   },
   {
     slug: "performance-management-system",
     name: "Performance Management System",
     description: "We design performance appraisal frameworks, KPIs, KRAs and employee evaluation processes.",
     overview:
-      "We design performance appraisal frameworks, KPIs, KRAs and employee evaluation processes. We support goal setting, performance reviews, feedback and improvement plans.",
+      "We design performance appraisal frameworks, KPIs, KRAs and employee evaluation processes. We support goal setting, performance reviews, feedback and Performance Improvement Plans (PIP).",
     includes: [
       "Performance appraisal frameworks",
       "KPIs, KRAs and evaluation processes",
       "Goal setting and performance reviews",
-      "Feedback and improvement plans",
+      "Feedback and Performance Improvement Plans (PIP)",
     ],
     outcomes: ["Clear goals for every role", "Fair, consistent reviews", "Performance that improves"],
   },

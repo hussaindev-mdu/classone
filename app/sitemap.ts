@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   return [
     { url: url(""), lastModified: now, changeFrequency: "monthly", priority: 1 },
-    ...["/services", "/about", "/process", "/contact"].map((p) => ({
+    ...["/services", "/about", "/process", "/careers", "/contact"].map((p) => ({
       url: url(p),
       lastModified: now,
       changeFrequency: "monthly" as const,

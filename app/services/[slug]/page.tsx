@@ -50,7 +50,11 @@ export default async function ServicePage({ params }: Props) {
               <span aria-hidden className="h-px w-10 bg-red" />
               Overview
             </p>
-            <p className="text-pretty font-display text-[clamp(1.5rem,2.6vw,2.25rem)] font-normal leading-[1.3] text-fg">
+            <p
+              className={`text-pretty font-display font-normal leading-[1.3] text-fg ${
+                service.overview.length > 300 ? "text-[clamp(1.25rem,1.9vw,1.6rem)]" : "text-[clamp(1.5rem,2.6vw,2.25rem)]"
+              }`}
+            >
               {service.overview}
             </p>
           </Reveal>
@@ -70,6 +74,29 @@ export default async function ServicePage({ params }: Props) {
           </Reveal>
         </div>
       </section>
+
+      {service.highlights?.length ? (
+        <section aria-labelledby="highlights-title" className="pb-24 md:pb-32">
+          <div className="container-site">
+            <h2 id="highlights-title" className="label mb-8 flex items-center gap-4">
+              <span aria-hidden className="h-px w-10 bg-red" />
+              Core service
+            </h2>
+            <ul className="grid gap-6">
+              {service.highlights.map((h) => (
+                <li key={h.title}>
+                  <Reveal className="cut-corner grid gap-6 bg-white/[0.04] p-8 md:grid-cols-12 md:gap-10 md:p-12">
+                    <h3 className="font-display text-2xl font-medium uppercase leading-tight text-fg md:col-span-4 md:text-[28px]">
+                      {h.title}
+                    </h3>
+                    <p className="text-pretty text-base leading-relaxed md:col-span-8 md:text-lg">{h.text}</p>
+                  </Reveal>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
 
       <section aria-labelledby="outcomes-title" className="border-y border-line bg-charcoal py-20 md:py-24">
         <div className="container-site">
